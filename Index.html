@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cl1pz's Fun</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Cl1pz's Fun</h1>
+        <button class="explore-btn" onclick="showSections()">Explore</button>
+        <button class="games-btn" onclick="showGames()">Games</button>
+    </div>
+
+    <div id="sections" class="sections" style="display:none;">
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <p>Hiii, my name is Cl1pz! I'm a Gorilla Tag Copy Creator and Content Creatir. My discord is .cl1pzzy.</p>
+        </section>
+
+        <section id="friends" class="section">
+            <h2>Friends</h2>
+            <p>My best friends are b00, Sushi, My twin cvg, and bytesu.</p>
+        </section>
+
+        <section id="support" class="section">
+            <h2>Support</h2>
+            <p>Support:</p>
+            <ul>
+                <li><strong>Phone:</strong> <a href="tel:+13047699891">(304) 769-9891</a></li>
+                <p>Support My cashapp so we can get more updates and a better domain name https://cash.app/$Zanderrr6.</p>
+            </ul>
+        </section>
+
+        <section id="discord" class="section">
+            <h2>Discord </h2>
+            <ul>
+                <li><a href="https://discord.gg/wGaTxqrHGH" target="_blank">Join my Discord</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- Game Section -->
+    <div id="games" class="games-section" style="display:none;">
+        <h2>Games</h2>
+        <button onclick="loadGame('chromeDino')">Chrome Dinosaur Game</button>
+        <button onclick="loadGame('snakeGame')">Google Snake Game</button>
+        <button onclick="loadGame('ticTacToe')">Tic-Tac-Toe</button>
+        <button onclick="loadGame('b00s Favorite Game')">b00s Favorite Game</button>
+
+        <div id="gameContainer" class="game-container">
+            <!-- Game iframe will be inserted dynamically here -->
+        </div>
+    </div>
+
+    <script>
+        function showSections() {
+            document.getElementById('sections').style.display = 'block';
+            document.getElementById('games').style.display = 'none';
+        }
+
+        function showGames() {
+            document.getElementById('sections').style.display = 'none';
+            document.getElementById('games').style.display = 'block';
+        }
+
+        function loadGame(gameName) {
+            const gameContainer = document.getElementById('gameContainer');
+            let iframe;
+
+            gameContainer.innerHTML = '';
+
+            switch (gameName) {
+                case 'chromeDino':
+                    iframe = document.createElement('iframe');
+                    iframe.src = "https://chromedino.com/";
+                    iframe.width = "50%";
+                    iframe.height = "400px";
+                    iframe.frameBorder = "0";
+                    gameContainer.appendChild(iframe);
+                    break;
+                case 'snakeGame':
+                    iframe = document.createElement('iframe');
+                    iframe.src = "https://snakegame.gg/";
+                    iframe.width = "50%";
+                    iframe.height = "500px";
+                    iframe.frameBorder = "0";
+                    gameContainer.appendChild(iframe);
+                    break;
+                case 'ticTacToe':
+                    iframe = document.createElement('iframe');
+                    iframe.src = "https://imlolman.github.io/TicTacToe-AI/";
+                    iframe.width = "50%";
+                    iframe.height = "400px";
+                    iframe.frameBorder = "0";
+                    gameContainer.appendChild(iframe);
+                    break;
+                case 'b00s Favorite Game':
+                    iframe = document.createElement('iframe');
+                    iframe.src = "https://doodles.google/doodle/icc-champions-trophy-2017-begins/";
+                    iframe.width = "50%";
+                    iframe.height = "400px";
+                    iframe.frameBorder = "0";
+                    gameContainer.appendChild(iframe);
+                    break;
+                default:
+                    alert('Game not available');
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

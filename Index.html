@@ -1,1 +1,127 @@
-NUh UH
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modded Apk Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Modded Apk Hub</h1>
+        <button class="explore-btn" onclick="showSections()">Explore</button>
+        <button class="free-apks-btn" onclick="showFreeAPKs()">Free APKs</button>
+        <button class="paid-apks-btn" onclick="showPaidAPKs()">Paid APKs</button>
+    </div>
+
+    <div id="sections" class="sections">
+        <section id="about" class="section">
+            <h2>About Us</h2>
+            <p>Hello, We are a modded apk server/website where we post apks of fan games and copys, Website made by Cl1pz:)</p>
+        </section>
+        <section id="Staff" class="section">
+            <h2>Staff</h2>
+            <p>Owners, Cvg, ToasterStrudle. Co owners, Shiesty, Oxg, Cl1pz. Admins, Binly, GoofyGoober. Mods, Fish. Posters, Binly, Ghostremz, Shiesty, Cl1pz, Cozmic, Cvg, Milky, Fish.</p>
+        </section>
+        <section id="discord" class="section">
+            <h2>Discord Link</h2>
+            <ul>
+                <li><a href="https://discord.gg/moddedapk" target="_blank">Join our Discord</a></li>
+            </ul>
+        </section>
+    </div>
+
+    <div id="freeAPKs" class="apk-section" style="display:none;">
+        <h2>Free APKs</h2>
+        <input type="text" id="searchBar" placeholder="Search for an APK..." onkeyup="filterProjects()">
+        <ul id="projectList">
+            <li><a href="https://drive.google.com/file/d/1Gks70U9WuJmKa6Nx9iOk2PartFMu-cW1/view" target="_blank">Halloween 22</a></li>
+            <li><a href="https://www.mediafire.com/file/1mzes8dmze944k4/Xmas_22.zip/file" target="_blank">Christmas 22</a></li>
+            <li><a href="https://fastupload.io/PEfe4q5336f6GHv/file" target="_blank">Summer 22</a></li>
+            <li><a href="https://drive.google.com/file/d/1D9yAxJ4m7PKdHK35lHwFop4jbbW7xEsv/view" target="_blank">Halloween FlashBack 22</a></li>
+            <li><a href="https://drive.google.com/file/d/1bRAKTW6indOCmIv8y0kPA3tDbAZpkcdP/view?usp=sharing" target="_blank">I Lava You 23</a></li>
+        </ul>
+    </div>
+
+    <div id="paidAPKs" class="apk-section" style="display:none;">
+        <h2>Paid APKs</h2>
+        <input type="text" id="keyInput" placeholder="Enter Access Key">
+        <button onclick="validateKey()">Submit</button>
+        <p id="keyMessage"></p>
+        <div id="paidContent" style="display:none;">
+            <ul>
+                <li><a href="https://example.com/paidapk1" target="_blank">Paid APK 1</a></li>
+                <li><a href="https://example.com/paidapk2" target="_blank">Paid APK 2</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        let usedKeys = JSON.parse(localStorage.getItem("usedKeys")) || {};
+
+        function showSections() {
+            document.getElementById('sections').style.display = 'block';
+            document.getElementById('freeAPKs').style.display = 'none';
+            document.getElementById('paidAPKs').style.display = 'none';
+        }
+
+        function showFreeAPKs() {
+            document.getElementById('sections').style.display = 'none';
+            document.getElementById('freeAPKs').style.display = 'block';
+            document.getElementById('paidAPKs').style.display = 'none';
+        }
+
+        function showPaidAPKs() {
+            document.getElementById('sections').style.display = 'none';
+            document.getElementById('freeAPKs').style.display = 'none';
+            document.getElementById('paidAPKs').style.display = 'block';
+        }
+
+        function filterProjects() {
+            const searchInput = document.getElementById('searchBar').value.toLowerCase();
+            const projects = document.querySelectorAll('#projectList li');
+
+            projects.forEach(project => {
+                const text = project.textContent.toLowerCase();
+                project.style.display = text.includes(searchInput) ? '' : 'none';
+            });
+        }
+
+        function validateKey() {
+            const key = document.getElementById("keyInput").value;
+            const keyMessage = document.getElementById("keyMessage");
+            const paidContent = document.getElementById("paidContent");
+
+            const currentTime = new Date().getTime();
+            const userIP = "uniqueUserIdentifier"; 
+
+            if (usedKeys[userIP] && usedKeys[userIP].expires > currentTime) {
+                keyMessage.textContent = "Access denied! Key already used.";
+                return;
+            }
+
+            if (key === "ModdedApksPaidOneTimeUse") {
+                usedKeys[userIP] = { expires: currentTime + 1000, type: "one-time" }; 
+                keyMessage.textContent = "Access granted! One-time key used.";
+                localStorage.setItem("usedKeys", JSON.stringify(usedKeys));
+                paidContent.style.display = "block";
+            } 
+            else if (key === "ModdedApksPaidWeekUse") {
+                usedKeys[userIP] = { expires: currentTime + 7 * 24 * 60 * 60 * 1000, type: "weekly" }; 
+                keyMessage.textContent = "Access granted! Expires in 7 days.";
+                localStorage.setItem("usedKeys", JSON.stringify(usedKeys));
+                paidContent.style.display = "block";
+            } 
+            else if (key === "ModdedApksPaidNeverEnding") {
+                usedKeys[userIP] = { expires: Infinity, type: "permanent" }; 
+                keyMessage.textContent = "Access granted! Permanent access.";
+                localStorage.setItem("usedKeys", JSON.stringify(usedKeys));
+                paidContent.style.display = "block";
+            } 
+            else {
+                keyMessage.textContent = "Invalid key!";
+            }
+        }
+    </script>
+</body>
+</html>

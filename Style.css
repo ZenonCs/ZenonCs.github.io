@@ -4,7 +4,7 @@ body{
  overflow:hidden;
 }
 
-/* kirks body */
+/* Std Kid */
 .controller.custom{
  width:830px;
  height:631px;
@@ -12,8 +12,12 @@ body{
  margin-top:0;
 
  background:
- url("https://i.imgur.com/CYRynAT.png") center/contain no-repeat,
- url("https://cdns-images.dzcdn.net/images/cover/ab67616d0000b273b6e5c5aab8c0c73e7c9a3c1f/1000x1000.jpg") center/cover no-repeat;
+ url("https://i.imgur.com/CYRynAT.png") no-repeat center/contain,
+ url("https://cdns-images.dzcdn.net/images/cover/ab67616d0000b273b6e5c5aab8c0c73e7c9a3c1f/1000x1000.jpg") no-repeat;
+
+ /* important for aligning the art */
+ background-size: contain, 1400px;
+ background-position: center, -260px -120px;
 }
 
 /* sticks */
@@ -32,13 +36,8 @@ body{
  width:100px;
 }
 
-.custom .stick.pressed.left{
- background-position-x:-102px;
-}
-
-.custom .stick.pressed.right{
- background-position-x:-102px;
-}
+.custom .stick.pressed.left{background-position-x:-102px;}
+.custom .stick.pressed.right{background-position-x:-102px;}
 
 .custom .stick.right{
  left:calc(100% + 150px);
@@ -53,27 +52,19 @@ body{
  left:206px;
 }
 
-.custom .back,
-.custom .start{
+.custom .back,.custom .start{
  background:url(https://i.imgur.com/C1YPtca.png);
  width:24px;
  height:40px;
 }
 
-.custom .back.pressed,
-.custom .start.pressed{
+.custom .back.pressed,.custom .start.pressed{
  background-position-y:40px;
  margin-top:-2px;
 }
 
-.custom .back{
- float:left;
-}
-
-.custom .start{
- float:right;
- background-position:24px 0;
-}
+.custom .back{float:left;}
+.custom .start{float:right;background-position:24px 0;}
 
 /* dpad */
 .custom .dpad{
@@ -89,41 +80,13 @@ body{
  position:absolute;
 }
 
-.custom .face.up,
-.custom .face.down{
- width:50px;
- height:64px;
-}
+.custom .face.up,.custom .face.down{width:50px;height:64px;}
+.custom .face.left,.custom .face.right{width:66px;height:50px;}
 
-.custom .face.left,
-.custom .face.right{
- width:66px;
- height:50px;
-}
-
-.custom .face.up{
- left:50px;
- top:0;
- background-position:0px 0px;
-}
-
-.custom .face.down{
- left:50px;
- top:85px;
- background-position:182px 0;
-}
-
-.custom .face.left{
- top:50px;
- left:-2px;
- background-position:-103px 0;
-}
-
-.custom .face.right{
- top:50px;
- right:-9px;
- background-position:66px 0;
-}
+.custom .face.up{left:50px;top:0;background-position:0 0;}
+.custom .face.down{left:50px;top:85px;background-position:182px 0;}
+.custom .face.left{top:50px;left:-2px;background-position:-103px 0;}
+.custom .face.right{top:50px;right:-9px;background-position:66px 0;}
 
 .custom .face.pressed{
  margin-top:-1px;
@@ -146,31 +109,12 @@ body{
  background:url(https://i.imgur.com/bpt0MPg.png);
 }
 
-.custom .button.pressed{
- background-position-y:-56px;
-}
+.custom .button.pressed{background-position-y:-56px;}
 
-.custom .a{
- background-position:0px 0;
- top:121px;
- left:61px;
-}
-
-.custom .b{
- background-position:166px 0;
- top:60px;
- right:29px;
-}
-
-.custom .x{
- background-position:110px 0;
- top:60px;
-}
-
-.custom .y{
- background-position:54px 0;
- left:61px;
-}
+.custom .a{background-position:0 0;top:121px;left:61px;}
+.custom .b{background-position:166px 0;top:60px;right:29px;}
+.custom .x{background-position:110px 0;top:60px;}
+.custom .y{background-position:54px 0;left:61px;}
 
 /* bumpers */
 .custom .bumpers{
@@ -188,18 +132,9 @@ body{
  opacity:0;
 }
 
-.custom .bumper.pressed{
- opacity:1;
-}
-
-.custom .bumper.left{
- float:left;
-}
-
-.custom .bumper.right{
- transform:rotateY(180deg);
- float:right;
-}
+.custom .bumper.pressed{opacity:1;}
+.custom .bumper.left{float:left;}
+.custom .bumper.right{transform:rotateY(180deg);float:right;}
 
 /* triggers */
 .custom .triggers{
@@ -216,11 +151,5 @@ body{
  opacity:0;
 }
 
-.custom .trigger.left{
- float:left;
-}
-
-.custom .trigger.right{
- background-position:84px 0;
- float:right;
-}
+.custom .trigger.left{float:left;}
+.custom .trigger.right{background-position:84px 0;float:right;}

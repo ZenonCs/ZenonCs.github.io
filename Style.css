@@ -4,23 +4,21 @@ body{
  overflow:hidden;
 }
 
-/* Std Kid */
+/* Controller body */
 .controller.custom{
  width:830px;
  height:631px;
- margin-left:0;
- margin-top:0;
+ position:relative;
 
  background:
- url("https://i.imgur.com/CYRynAT.png") no-repeat center/contain,
+ url("https://i.imgur.com/CYRynAT.png") center/contain no-repeat,
  url("https://cdns-images.dzcdn.net/images/cover/ab67616d0000b273b6e5c5aab8c0c73e7c9a3c1f/1000x1000.jpg") no-repeat;
 
- /* important for aligning the art */
- background-size: contain, 1400px;
- background-position: center, -260px -120px;
+ background-size:contain,1400px;
+ background-position:center,-260px -120px;
 }
 
-/* sticks */
+/* Sticks */
 .custom .sticks{
  position:absolute;
  width:100px;
@@ -43,7 +41,7 @@ body{
  left:calc(100% + 150px);
 }
 
-/* menu buttons */
+/* Menu buttons */
 .custom .arrows{
  position:absolute;
  width:418px;
@@ -66,7 +64,7 @@ body{
 .custom .back{float:left;}
 .custom .start{float:right;background-position:24px 0;}
 
-/* dpad */
+/* Dpad */
 .custom .dpad{
  position:absolute;
  width:140px;
@@ -93,7 +91,7 @@ body{
  background-position-y:64px;
 }
 
-/* face buttons */
+/* Face buttons */
 .custom .abxy{
  position:absolute;
  width:204px;
@@ -109,14 +107,16 @@ body{
  background:url(https://i.imgur.com/bpt0MPg.png);
 }
 
-.custom .button.pressed{background-position-y:-56px;}
+.custom .button.pressed{
+ background-position-y:-56px;
+}
 
 .custom .a{background-position:0 0;top:121px;left:61px;}
 .custom .b{background-position:166px 0;top:60px;right:29px;}
 .custom .x{background-position:110px 0;top:60px;}
 .custom .y{background-position:54px 0;left:61px;}
 
-/* bumpers */
+/* Bumpers */
 .custom .bumpers{
  position:absolute;
  width:601px;
@@ -129,27 +129,27 @@ body{
  width:81px;
  height:32px;
  background:url(https://i.imgur.com/JocHHed.png);
- opacity:0;
+ opacity:1;
 }
 
-.custom .bumper.pressed{opacity:1;}
 .custom .bumper.left{float:left;}
-.custom .bumper.right{transform:rotateY(180deg);float:right;}
+.custom .bumper.right{float:right;transform:rotateY(180deg);}
 
-/* triggers */
+/* Triggers */
 .custom .triggers{
  position:absolute;
  width:601px;
  height:65px;
  left:115px;
+ top:20px;
 }
 
 .custom .trigger{
  background:url(https://i.imgur.com/k8PnZZG.png);
  width:84px;
  height:73px;
- opacity:0;
+ opacity:1;
 }
 
 .custom .trigger.left{float:left;}
-.custom .trigger.right{background-position:84px 0;float:right;}
+.custom .trigger.right{float:right;background-position:84px 0;}

@@ -1,143 +1,238 @@
-body {
-    background: transparent;
-    margin: 0 auto;
-    overflow: hidden;
+body{
+ background:transparent;
+ margin:0 auto;
+ overflow:hidden;
 }
 
-/* Jews */
-.controller.custom {
-    width: 830px;
-    height: 631px;
+/* jews???????? */
+.controller.custom{
+ width:830px;
+ height:631px;
+ margin-left:0;
+ margin-top:0;
 
-    background-image: url("https://cdns-images.dzcdn.net/images/cover/ab67616d0000b273b6e5c5aab8c0c73e7c9a3c1f/1000x1000.jpg");
-    background-repeat: no-repeat;
+ background-image:url("https://cdns-images.dzcdn.net/images/cover/ab67616d0000b273b6e5c5aab8c0c73e7c9a3c1f/1000x1000.jpg");
+ background-size:cover;
+ background-position:center;
+ background-repeat:no-repeat;
 
-    /* critical for alignment */
-    background-size: 1350px;
-    background-position: -250px -120px;
+ /* mask the album art to controller shape */
+ -webkit-mask-image:url("https://i.imgur.com/CYRynAT.png");
+ -webkit-mask-size:contain;
+ -webkit-mask-repeat:no-repeat;
+ -webkit-mask-position:center;
 
-    position: relative;
-}
-
-/* REMOVE overlay completely */
-.controller.custom::after {
-    display:none;
+ mask-image:url("https://i.imgur.com/CYRynAT.png");
+ mask-size:contain;
+ mask-repeat:no-repeat;
+ mask-position:center;
 }
 
 /* sticks */
-.custom .sticks {
-    position:absolute;
-    width:100px;
-    height:100px;
-    left:240px;
-    top:308px;
+.custom .sticks{
+ position:absolute;
+ width:100px;
+ height:100px;
+ left:240px;
+ top:308px;
 }
 
-.custom .stick {
-    position:absolute;
-    background:url(https://i.imgur.com/CVRn6CX.png);
-    height:100px;
-    width:100px;
+.custom .stick{
+ position:absolute;
+ background:url(https://i.imgur.com/CVRn6CX.png);
+ height:100px;
+ width:100px;
 }
 
-.custom .stick.right {
-    left:250px;
+.custom .stick.pressed.left{
+ background-position-x:-102px;
 }
 
-.custom .stick.pressed.left,
 .custom .stick.pressed.right{
-    background-position-x:-102px;
+ background-position-x:-102px;
+}
+
+.custom .stick.right{
+ left:calc(100% + 150px);
+}
+
+/* menu buttons */
+.custom .arrows{
+ position:absolute;
+ width:418px;
+ height:0px;
+ top:127px;
+ left:206px;
+}
+
+.custom .back,
+.custom .start{
+ background:url(https://i.imgur.com/C1YPtca.png);
+ width:24px;
+ height:40px;
+}
+
+.custom .back.pressed,
+.custom .start.pressed{
+ background-position-y:40px;
+ margin-top:-2px;
+}
+
+.custom .back{
+ float:left;
+}
+
+.custom .start{
+ float:right;
+ background-position:24px 0;
 }
 
 /* dpad */
 .custom .dpad{
-    position:absolute;
-    width:140px;
-    height:132px;
-    top:142px;
-    left:75px;
+ position:absolute;
+ width:140px;
+ height:132px;
+ top:142px;
+ left:75px;
 }
 
 .custom .face{
-    background:url(https://i.imgur.com/xHzP6yc.png);
-    position:absolute;
+ background:url(https://i.imgur.com/xHzP6yc.png);
+ position:absolute;
 }
 
-.custom .face.up{left:50px;top:0;width:50px;height:64px;}
-.custom .face.down{left:50px;top:85px;width:50px;height:64px;background-position:182px 0;}
-.custom .face.left{top:50px;left:-2px;width:66px;height:50px;background-position:-103px 0;}
-.custom .face.right{top:50px;right:-9px;width:66px;height:50px;background-position:66px 0;}
+.custom .face.up,
+.custom .face.down{
+ width:50px;
+ height:64px;
+}
+
+.custom .face.left,
+.custom .face.right{
+ width:66px;
+ height:50px;
+}
+
+.custom .face.up{
+ left:50px;
+ top:0;
+ background-position:0px 0px;
+}
+
+.custom .face.down{
+ left:50px;
+ top:85px;
+ background-position:182px 0;
+}
+
+.custom .face.left{
+ top:50px;
+ left:-2px;
+ background-position:-103px 0;
+}
+
+.custom .face.right{
+ top:50px;
+ right:-9px;
+ background-position:66px 0;
+}
 
 .custom .face.pressed{
-    background-position-y:64px;
+ margin-top:-1px;
+ background-position-y:64px;
 }
 
 /* face buttons */
 .custom .abxy{
-    position:absolute;
-    width:204px;
-    height:205px;
-    top:137px;
-    left:592px;
+ position:absolute;
+ width:204px;
+ height:205px;
+ top:137px;
+ left:592px;
 }
 
 .custom .button{
-    position:absolute;
-    width:54px;
-    height:54px;
-    background:url(https://i.imgur.com/bpt0MPg.png);
+ position:absolute;
+ width:54px;
+ height:54px;
+ background:url(https://i.imgur.com/bpt0MPg.png);
 }
 
 .custom .button.pressed{
-    background-position-y:-56px;
+ background-position-y:-56px;
 }
 
-.custom .a{top:121px;left:61px;}
-.custom .b{top:60px;right:29px;background-position:166px 0;}
-.custom .x{top:60px;background-position:110px 0;}
-.custom .y{left:61px;background-position:54px 0;}
+.custom .a{
+ background-position:0px 0;
+ top:121px;
+ left:61px;
+}
+
+.custom .b{
+ background-position:166px 0;
+ top:60px;
+ right:29px;
+}
+
+.custom .x{
+ background-position:110px 0;
+ top:60px;
+}
+
+.custom .y{
+ background-position:54px 0;
+ left:61px;
+}
 
 /* bumpers */
 .custom .bumpers{
-    position:absolute;
-    width:601px;
-    height:28px;
-    left:114px;
-    top:78px;
+ position:absolute;
+ width:601px;
+ height:28px;
+ left:114px;
+ top:78px;
 }
 
 .custom .bumper{
-    width:81px;
-    height:32px;
-    background:url(https://i.imgur.com/JocHHed.png);
-    opacity:0;
+ width:81px;
+ height:32px;
+ background:url(https://i.imgur.com/JocHHed.png);
+ opacity:0;
 }
 
 .custom .bumper.pressed{
-    opacity:1;
+ opacity:1;
+}
+
+.custom .bumper.left{
+ float:left;
 }
 
 .custom .bumper.right{
-    transform:rotateY(180deg);
-    float:right;
+ transform:rotateY(180deg);
+ float:right;
 }
 
 /* triggers */
 .custom .triggers{
-    position:absolute;
-    width:601px;
-    height:65px;
-    left:115px;
+ position:absolute;
+ width:601px;
+ height:65px;
+ left:115px;
 }
 
 .custom .trigger{
-    background:url(https://i.imgur.com/k8PnZZG.png);
-    width:84px;
-    height:73px;
-    opacity:0;
+ background:url(https://i.imgur.com/k8PnZZG.png);
+ width:84px;
+ height:73px;
+ opacity:0;
+}
+
+.custom .trigger.left{
+ float:left;
 }
 
 .custom .trigger.right{
-    background-position:84px 0;
-    float:right;
+ background-position:84px 0;
+ float:right;
 }

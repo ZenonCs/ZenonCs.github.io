@@ -4,28 +4,16 @@ body{
  overflow:hidden;
 }
 
-/* jews???????? */
+/* kirks body */
 .controller.custom{
  width:830px;
  height:631px;
  margin-left:0;
  margin-top:0;
 
- background-image:url("https://cdns-images.dzcdn.net/images/cover/ab67616d0000b273b6e5c5aab8c0c73e7c9a3c1f/1000x1000.jpg");
- background-size:cover;
- background-position:center;
- background-repeat:no-repeat;
-
- /* mask the album art to controller shape */
- -webkit-mask-image:url("https://i.imgur.com/CYRynAT.png");
- -webkit-mask-size:contain;
- -webkit-mask-repeat:no-repeat;
- -webkit-mask-position:center;
-
- mask-image:url("https://i.imgur.com/CYRynAT.png");
- mask-size:contain;
- mask-repeat:no-repeat;
- mask-position:center;
+ background:
+ url("https://i.imgur.com/CYRynAT.png") center/contain no-repeat,
+ url("https://cdns-images.dzcdn.net/images/cover/ab67616d0000b273b6e5c5aab8c0c73e7c9a3c1f/1000x1000.jpg") center/cover no-repeat;
 }
 
 /* sticks */

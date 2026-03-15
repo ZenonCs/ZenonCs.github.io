@@ -4,20 +4,28 @@ body {
     overflow: hidden;
 }
 
+/* Controller body */
 .controller.custom {
     width: 830px;
     height: 631px;
     margin-left: 0;
     margin-top: 0;
-    position: relative;
 
-    /* Album cover as the “skin” */
-    background: url("https://e.snmc.io/i/600/w/dafd486985b83d7760cec5adbe50c18c/12874262/otuka-never-enough-Cover-Art.jpg") no-repeat center center;
-    background-size: cover;
-    border-radius: 25px; /* optional, to match controller edges */
+    background-image: url("https://cdns-images.dzcdn.net/images/cover/ab67616d0000b273b6e5c5aab8c0c73e7c9a3c1f/1000x1000.jpg");
+    background-size: 120% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    filter: contrast(1.25) brightness(0.95) saturate(0.9);
+    position: relative;
 }
 
-/* Sticks stay visible */
+/* remove overlay */
+.controller.custom::after {
+    display: none;
+}
+
+/* Sticks */
 .custom .sticks {
     position: absolute;
     width: 100px;
@@ -56,7 +64,48 @@ body {
     position: absolute;
 }
 
-/* ABXY Buttons */
+.custom .face.up,
+.custom .face.down {
+    width: 50px;
+    height: 64px;
+}
+
+.custom .face.left,
+.custom .face.right {
+    width: 66px;
+    height: 50px;
+}
+
+.custom .face.up {
+    left: 50px;
+    top: 0;
+    background-position: 0px 0px;
+}
+
+.custom .face.down {
+    left: 50px;
+    top: 85px;
+    background-position: 182px 0;
+}
+
+.custom .face.left {
+    top: 50px;
+    left: -2px;
+    background-position: -103px 0;
+}
+
+.custom .face.right {
+    top: 50px;
+    right: -9px;
+    background-position: 66px 0;
+}
+
+.custom .face.pressed {
+    margin-top: -1px;
+    background-position-y: 64px;
+}
+
+/* ABXY buttons */
 .custom .abxy {
     position: absolute;
     width: 204px;
@@ -72,6 +121,32 @@ body {
     background: url(https://i.imgur.com/bpt0MPg.png);
 }
 
+.custom .button.pressed {
+    background-position-y: -56px;
+}
+
+.custom .a {
+    background-position: 0px 0;
+    top: 121px;
+    left: 61px;
+}
+
+.custom .b {
+    background-position: 166px 0;
+    top: 60px;
+    right: 29px;
+}
+
+.custom .x {
+    background-position: 110px 0;
+    top: 60px;
+}
+
+.custom .y {
+    background-position: 54px 0;
+    left: 61px;
+}
+
 /* Bumpers */
 .custom .bumpers {
     position: absolute;
@@ -85,6 +160,20 @@ body {
     width: 81px;
     height: 32px;
     background: url(https://i.imgur.com/JocHHed.png);
+    opacity: 0;
+}
+
+.custom .bumper.pressed {
+    opacity: 1;
+}
+
+.custom .bumper.left {
+    float: left;
+}
+
+.custom .bumper.right {
+    transform: rotateY(180deg);
+    float: right;
 }
 
 /* Triggers */
@@ -96,10 +185,17 @@ body {
 }
 
 .custom .trigger {
+    background: url(https://i.imgur.com/k8PnZZG.png);
     width: 84px;
     height: 73px;
-    background: url(https://i.imgur.com/k8PnZZG.png);
+    opacity: 0;
 }
 
-.custom .trigger.right { float: right; }
-.custom .trigger.left { float: left; }
+.custom .trigger.right {
+    background-position: 84px 0;
+    float: right;
+}
+
+.custom .trigger.left {
+    float: left;
+}

@@ -4,198 +4,140 @@ body {
     overflow: hidden;
 }
 
-/* Controller body */
+/* Jews */
 .controller.custom {
     width: 830px;
     height: 631px;
-    margin-left: 0;
-    margin-top: 0;
 
     background-image: url("https://cdns-images.dzcdn.net/images/cover/ab67616d0000b273b6e5c5aab8c0c73e7c9a3c1f/1000x1000.jpg");
-    background-size: 120% auto;
-    background-position: center;
     background-repeat: no-repeat;
 
-    filter: contrast(1.25) brightness(0.95) saturate(0.9);
+    /* critical for alignment */
+    background-size: 1350px;
+    background-position: -250px -120px;
+
     position: relative;
 }
 
-/* remove overlay */
+/* REMOVE overlay completely */
 .controller.custom::after {
-    display: none;
+    display:none;
 }
 
-/* Sticks */
+/* sticks */
 .custom .sticks {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    left: 240px;
-    top: 308px;
+    position:absolute;
+    width:100px;
+    height:100px;
+    left:240px;
+    top:308px;
 }
 
 .custom .stick {
-    position: absolute;
-    background: url(https://i.imgur.com/CVRn6CX.png);
-    height: 100px;
-    width: 100px;
-}
-
-.custom .stick.pressed.left,
-.custom .stick.pressed.right {
-    background-position-x: -102px;
+    position:absolute;
+    background:url(https://i.imgur.com/CVRn6CX.png);
+    height:100px;
+    width:100px;
 }
 
 .custom .stick.right {
-    left: calc(100% + 150px);
+    left:250px;
 }
 
-/* D-Pad */
-.custom .dpad {
-    position: absolute;
-    width: 140px;
-    height: 132px;
-    top: 142px;
-    left: 75px;
+.custom .stick.pressed.left,
+.custom .stick.pressed.right{
+    background-position-x:-102px;
 }
 
-.custom .face {
-    background: url(https://i.imgur.com/xHzP6yc.png);
-    position: absolute;
+/* dpad */
+.custom .dpad{
+    position:absolute;
+    width:140px;
+    height:132px;
+    top:142px;
+    left:75px;
 }
 
-.custom .face.up,
-.custom .face.down {
-    width: 50px;
-    height: 64px;
+.custom .face{
+    background:url(https://i.imgur.com/xHzP6yc.png);
+    position:absolute;
 }
 
-.custom .face.left,
-.custom .face.right {
-    width: 66px;
-    height: 50px;
+.custom .face.up{left:50px;top:0;width:50px;height:64px;}
+.custom .face.down{left:50px;top:85px;width:50px;height:64px;background-position:182px 0;}
+.custom .face.left{top:50px;left:-2px;width:66px;height:50px;background-position:-103px 0;}
+.custom .face.right{top:50px;right:-9px;width:66px;height:50px;background-position:66px 0;}
+
+.custom .face.pressed{
+    background-position-y:64px;
 }
 
-.custom .face.up {
-    left: 50px;
-    top: 0;
-    background-position: 0px 0px;
+/* face buttons */
+.custom .abxy{
+    position:absolute;
+    width:204px;
+    height:205px;
+    top:137px;
+    left:592px;
 }
 
-.custom .face.down {
-    left: 50px;
-    top: 85px;
-    background-position: 182px 0;
+.custom .button{
+    position:absolute;
+    width:54px;
+    height:54px;
+    background:url(https://i.imgur.com/bpt0MPg.png);
 }
 
-.custom .face.left {
-    top: 50px;
-    left: -2px;
-    background-position: -103px 0;
+.custom .button.pressed{
+    background-position-y:-56px;
 }
 
-.custom .face.right {
-    top: 50px;
-    right: -9px;
-    background-position: 66px 0;
+.custom .a{top:121px;left:61px;}
+.custom .b{top:60px;right:29px;background-position:166px 0;}
+.custom .x{top:60px;background-position:110px 0;}
+.custom .y{left:61px;background-position:54px 0;}
+
+/* bumpers */
+.custom .bumpers{
+    position:absolute;
+    width:601px;
+    height:28px;
+    left:114px;
+    top:78px;
 }
 
-.custom .face.pressed {
-    margin-top: -1px;
-    background-position-y: 64px;
+.custom .bumper{
+    width:81px;
+    height:32px;
+    background:url(https://i.imgur.com/JocHHed.png);
+    opacity:0;
 }
 
-/* ABXY buttons */
-.custom .abxy {
-    position: absolute;
-    width: 204px;
-    height: 205px;
-    top: 137px;
-    left: 592px;
+.custom .bumper.pressed{
+    opacity:1;
 }
 
-.custom .button {
-    position: absolute;
-    width: 54px;
-    height: 54px;
-    background: url(https://i.imgur.com/bpt0MPg.png);
+.custom .bumper.right{
+    transform:rotateY(180deg);
+    float:right;
 }
 
-.custom .button.pressed {
-    background-position-y: -56px;
+/* triggers */
+.custom .triggers{
+    position:absolute;
+    width:601px;
+    height:65px;
+    left:115px;
 }
 
-.custom .a {
-    background-position: 0px 0;
-    top: 121px;
-    left: 61px;
+.custom .trigger{
+    background:url(https://i.imgur.com/k8PnZZG.png);
+    width:84px;
+    height:73px;
+    opacity:0;
 }
 
-.custom .b {
-    background-position: 166px 0;
-    top: 60px;
-    right: 29px;
-}
-
-.custom .x {
-    background-position: 110px 0;
-    top: 60px;
-}
-
-.custom .y {
-    background-position: 54px 0;
-    left: 61px;
-}
-
-/* Bumpers */
-.custom .bumpers {
-    position: absolute;
-    width: 601px;
-    height: 28px;
-    left: 114px;
-    top: 78px;
-}
-
-.custom .bumper {
-    width: 81px;
-    height: 32px;
-    background: url(https://i.imgur.com/JocHHed.png);
-    opacity: 0;
-}
-
-.custom .bumper.pressed {
-    opacity: 1;
-}
-
-.custom .bumper.left {
-    float: left;
-}
-
-.custom .bumper.right {
-    transform: rotateY(180deg);
-    float: right;
-}
-
-/* Triggers */
-.custom .triggers {
-    position: absolute;
-    width: 601px;
-    height: 65px;
-    left: 115px;
-}
-
-.custom .trigger {
-    background: url(https://i.imgur.com/k8PnZZG.png);
-    width: 84px;
-    height: 73px;
-    opacity: 0;
-}
-
-.custom .trigger.right {
-    background-position: 84px 0;
-    float: right;
-}
-
-.custom .trigger.left {
-    float: left;
+.custom .trigger.right{
+    background-position:84px 0;
+    float:right;
 }

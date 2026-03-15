@@ -1,2 +1,0 @@
-# ZenonCs.github.io
-Sigma
